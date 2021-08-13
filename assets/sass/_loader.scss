@@ -1,0 +1,108 @@
+
+.loader_moda {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    z-index: 9999;
+    
+}
+
+.loader {
+    @include PC {
+        width: 150px;
+        height: 150px;
+        border: 1px solid transparent;
+        border-radius: 50%;
+        position: absolute;
+        top:calc(50vh - 75px);
+        left:calc(50vw - 75px) ;
+
+        &::before,&::after {
+            content: "";
+            border:8px solid darkslateblue;;
+            border-radius: 50%;
+            width: inherit;
+            height: inherit;
+            position: absolute;
+            top: 0;
+            left: 0;
+            animation:  loader 2s linear infinite;
+            opacity: 0;
+        }
+
+        &::before {
+            animation-delay: 0.5s;
+        }
+
+    }
+    @include Tablet {
+        width: 150px;
+        height: 150px;
+        border: 1px solid transparent;
+        border-radius: 50%;
+        position: absolute;
+        top:200px;
+        left:calc(50vw - 75px) ;
+
+        &::before,&::after {
+            content: "";
+            border:8px solid darkslateblue;;
+            border-radius: 50%;
+            width: inherit;
+            height: inherit;
+            position: absolute;
+            top: 0;
+            left: 0;
+            animation:  loader 2s linear infinite;
+            opacity: 0;
+        }
+
+        &::before {
+            animation-delay: 0.5s;
+        }
+    }
+    @include Mobile {
+        width: 150px;
+        height: 150px;
+        border: 1px solid transparent;
+        border-radius: 50%;
+        position: absolute;
+        top:200px;
+        left:calc(50vw - 75px) ;
+
+        &::before,&::after {
+            content: "";
+            border:8px solid darkslateblue;;
+            border-radius: 50%;
+            width: inherit;
+            height: inherit;
+            position: absolute;
+            top: 0;
+            left: 0;
+            animation:  loader 2s linear infinite;
+            opacity: 0;
+        }
+
+        &::before {
+            animation-delay: 0.5s;
+        }
+    }
+
+}
+
+@keyframes loader {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}

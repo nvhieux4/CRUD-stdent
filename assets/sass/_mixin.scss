@@ -1,0 +1,102 @@
+
+
+@mixin container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+@mixin row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
+@mixin col-12 {
+    width: 100%;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+@mixin col-8 {       
+    
+    width: 66.6667%;
+    padding-left: 5px;
+    padding-right: 5px;
+    
+      
+}
+
+@mixin col-10-3 {
+   
+    width: 50%;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-top: 5px;
+}
+
+@mixin col-8-2 {
+    width: 50%;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-top: 5px;
+}
+
+@mixin col-8-4 {
+    width: 33.333%;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-top: 5px;
+}
+
+@mixin col-4 {
+    width: 33.3333%;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+@mixin PC() {
+    @media only screen and (min-width: 1024px) { @content; }
+}
+
+@mixin Tablet() {
+    @media only screen and (min-width: 740px) and (max-width: 1023px) { @content; }
+}
+
+@mixin Mobile() {
+    @media only screen and (max-width: 739px) { @content; }
+}
+
+@mixin btn {
+    width: 80px;
+    height: 32px;
+    font-size: 1.6rem;
+    border-radius: 6px;
+    border: 1px solid;
+    cursor: pointer;
+    background-color: red;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        right: 50%;
+        background-color: rgb(58, 58, 150);
+        opacity: 0;
+    }
+    &:hover::before {
+        transition:  0.3s all ease-in;
+        left: 0;
+        opacity: 1;
+        right: 0;
+        z-index: -1;
+    }
+}

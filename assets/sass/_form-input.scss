@@ -1,0 +1,115 @@
+@import "./mixin";
+
+.input {
+    &__group {
+        margin-top: 20px;
+        position: relative;
+        margin-left: 20px;
+        .hidden-warring {
+
+            position: absolute;
+            top: 0;
+            right: 22%;
+            transform: translateY(50%);
+            display: none;
+        }
+
+    }
+
+    &__input {
+        width: 80%;
+        height: 42px;
+        border: 1px solid #555;
+        border-radius: 4px;
+        margin-bottom: 10px;
+        font-size: 1.6rem;
+        padding: 0 10px;
+        outline: none;
+        transition: 0.25s ease;
+
+        &:focus  {
+            border-color: #3528a5;
+            + .input__label{
+                padding: 0 10px;
+                left: 10px;
+                top: 0;
+                display: inline-block;
+                background-color: #fff;
+                color: #3528a5;
+            }
+        }
+
+        &:not(:placeholder-shown) + .input__label{
+            padding: 0 10px;
+            left: 10px;
+            top: 0;
+            display: inline-block;
+            background-color: #fff;
+            //color: #3528a5;
+        }
+
+    }
+
+    &__label {
+        position: absolute;
+        top: 42%;
+        transform: translateY(-50%);
+        font-size: 1.6rem;
+        color: #585757c7;
+        left: 20px;
+        user-select: none;
+        transition: 0.25s ease;
+    }
+
+
+    &__message {
+        font-size: 1.4rem;
+        color: #b41515;
+        display: block;
+        position: absolute;
+        top: 90%;
+        
+    }
+
+    &__submit {
+        @include btn;
+        display: block;
+        margin: 0 auto;
+    }
+
+}
+.invalid {
+    .input__input {
+        border: 1px solid red;
+        &:focus  {
+            + .input__label{
+                
+                color: red;
+            }
+        }
+    }
+    .input__label {
+        color: red;
+    }
+}
+
+.group-place {
+    font-size: 1.7rem;
+    margin-top: 18px;
+
+    &-item {
+        margin: 0 0 10px 20px;
+    }
+    
+    label {
+        float: left;
+        width: 140px;
+    }
+
+    select {
+        width: 80%;
+        height: 35px;
+        font-size: 1.5rem;
+        border-radius: 5px;
+    }
+}

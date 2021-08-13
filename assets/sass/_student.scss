@@ -1,0 +1,70 @@
+
+.student {
+    display: flex;
+    position: relative;
+    border: 1px solid #ccc;
+    align-items: center;
+    border-radius: 6px;
+    box-shadow: 3px 2px 1px  #959395, -2px 2px 7px  #999;
+
+    &__img {
+        width: 120px;
+        height: 120px;
+
+        background-position: center;
+        background-size: cover;
+        border-radius: 50%;
+        margin: 5px;
+    }
+
+    &__profile {
+        font-size: 1.6rem;
+        width: 60%;
+        margin: 0 auto;
+        line-height: 1.4;
+        margin: 8px;
+
+        &-name {
+            text-align: center;
+            font-size: 2.2rem;
+        }
+
+        &-information {
+            font-weight: 600;
+        }
+
+        &-btn {
+            display: flex;
+            align-items: center;
+
+            &-see{
+                @include btn;
+                background-color: chartreuse;
+                color: crimson;
+                
+                a {
+                    text-decoration: none;
+                    padding: 7px 21px;
+                }
+            }
+            &-edit{
+                @include btn;
+            }
+        }
+
+
+    }
+
+    &__close {
+        position: absolute;
+        top: 3px;
+        right: 5px;
+        font-size: 20px;
+        padding: 5px;
+        cursor: pointer;
+
+        &:hover {
+            opacity: 0.5;
+        }
+    }
+}
